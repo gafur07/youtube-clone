@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply bg-[#0f0f0f]
+}
+.container {
+	@apply w-[95%] mx-auto
+}
+.icon-btn:hover {
+	background: #222!important;
+	transition: all 0.3s ease-in-out;
+}
+.css-1pz7awu-MuiButtonBase-root-MuiIconButton-root {
+	color: rgb(226, 219, 219)!important;
+}
+::-webkit-scrollbar {
+
+  -webkit-appearance: none;
+  width: 7px;
+  background-color: transparent;
+
+}
+::-webkit-scrollbar-thumb {
+	@apply rounded-md bg-gray-300 cursor-pointer
+}
