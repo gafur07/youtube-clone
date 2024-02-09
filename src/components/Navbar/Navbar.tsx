@@ -20,7 +20,7 @@ const Navbar = () => {
 		dispatch(getAllVideo(search))
 	}
 	return (
-		<header className="py-[18px] w-full">
+		<header className="py-[15px] w-full">
 			<div className="container">
 				<nav className="w-full flex justify-between items-center gap-[50px]">
 					<div className="flex gap-4">

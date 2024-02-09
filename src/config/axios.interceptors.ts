@@ -7,7 +7,7 @@ export const axiosAPI = axios.create({
 	baseURL,
 	params: {
 		part: "snippet",
-		maxResults: 51,
+		maxResults: 50,
 		key: "AIzaSyC5ZK-KdqnPXSFgnNuKI05NGbsW2t5R-0w",
 	}
 })
