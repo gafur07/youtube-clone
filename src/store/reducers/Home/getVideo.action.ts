@@ -1,5 +1,4 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 import { axiosAPI, baseURL } from "../../../config/axios.interceptors";
 
 export const getAllVideo = createAsyncThunk(

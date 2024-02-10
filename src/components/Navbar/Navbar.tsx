@@ -8,6 +8,7 @@ import { useState } from "react"
 import { getAllVideo } from "../../store/reducers/Home/getVideo.action"
 import { useTypedSelector } from "../hooks/useTypedSelector"
 import { useAppDispatch } from "../hooks/useAppDispatch"
+import { Link } from "react-router-dom"
 
 
 
@@ -23,7 +24,7 @@ const Navbar = () => {
 		<header className="py-[15px] w-full">
 			<div className="container">
 				<nav className="w-full flex justify-between items-center gap-[50px]">
-					<div className="flex gap-4">
+					<div className="flex gap-4 items-center">
 						<IconButton
 						 size="large"
 						 color="inherit"
@@ -31,7 +32,9 @@ const Navbar = () => {
 						>
 							<MenuIcon color="inherit"  />
 						</IconButton>
-						<img className="logo cursor-pointer" src={logo} alt="" />
+						<Link to={"/"}>
+							<img className="logo cursor-pointer" src={logo} alt="" />
+						</Link>
 					</div>
 						<form onSubmit={searchVideo} className="w-[40%]">
 							<span className="flex items-stretch">

@@ -3,8 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+	box-sizing: content-box;
+}
+
 body {
-	@apply bg-[#0f0f0f]
+	@apply bg-[#0f0f0f] max-w-[100%]
 }
 .container {
 	@apply w-[98%] mx-auto

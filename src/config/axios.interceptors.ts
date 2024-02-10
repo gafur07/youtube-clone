@@ -8,6 +8,6 @@ export const axiosAPI = axios.create({
 	params: {
 		part: "snippet",
 		maxResults: 50,
-		key: "AIzaSyC5ZK-KdqnPXSFgnNuKI05NGbsW2t5R-0w",
+		key: "AIzaSyCsUBl7MGq9eCgNgiZFY6Efxh4gpo2MbpE",
 	}
 })

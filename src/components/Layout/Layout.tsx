@@ -1,16 +1,16 @@
-import Home from '../../screens/Home/Home'
 import Navbar from '../Navbar/Navbar'
-import { Outlet } from "react-router-dom"
-import Sidebar from '../Sidebar/Sidebar'
+import { Route, Routes } from "react-router-dom"
+import Main from '../Main/Main'
+import Video from '../../screens/YtVideo'
+
 const Layout = () => {
 	return (
 		<>
 		<Navbar />
-		<div className='flex gap-4 items-start'>
-			<Sidebar />
-			<Home />
-		</div>
-		<Outlet />
+		<Routes>
+			<Route path='*' element={<Main />}/>
+			<Route path='video/:videoId' element={<Video />}/>
+		</Routes>
 		</>
 	)
 }

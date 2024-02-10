@@ -4,21 +4,24 @@ import { useEffect } from "react";
 import { useAppDispatch } from "../../components/hooks/useAppDispatch";
 import { getAllVideo } from "../../store/reducers/Home/getVideo.action";
 import moment from "moment";
+import LoadingBar from "react-top-loading-bar";
 
 const Home = () => {
-  const { data } = useTypedSelector((store) => store.allVideo);
+  const { data, loading } = useTypedSelector((store) => store.allVideo);
 	const dispatch = useAppDispatch()
   console.log(data);
 	useEffect(() => {
-		// dispatch(getAllVideo())
+		dispatch(getAllVideo())
 	},[])
 
   return (
     <>
+		<div className="w-full">
+			<LoadingBar color="red" progress={100}/>
       <div className="w-full pr-[2.5%] flex overflow-y-auto max-h-[85vh] pb-[30px] flex-wrap gap-[15px]">
         {data?.map((item: any) => (
-          <div key={item?.id?.videoId} className="mb-[30px]">
-            <Link to={`video/${item?.id?.videoId}`}>
+					<div key={item?.id?.videoId} className="mb-[30px]">
+            <Link to={`/video/${item?.id?.videoId}`}>
               <img
                 className="rounded-md w-[390px] h-[225px] object-cover"
                 src={item?.snippet?.thumbnails?.high?.url}
@@ -33,6 +36,7 @@ const Home = () => {
           </div>
         ))}
       </div>
+		</div>
     </>
   );
 };

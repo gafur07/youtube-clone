@@ -1,12 +1,14 @@
 import { Route, Routes } from "react-router-dom"
 import Layout from "./components/Layout/Layout"
+import { routes } from "./utils/routes"
 
 const App = () => {
 	return (
 		<>
-		<Routes>
-			<Route path="/" element={<Layout />}/>
-		</Routes>
+		<Layout />
+		{/* <Routes>
+			<Route path="/" element={<Layout />} />
+		</Routes> */}
 		</>
 	)
 }
