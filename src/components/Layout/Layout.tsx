@@ -1,16 +1,11 @@
 import Navbar from '../Navbar/Navbar'
-import { Route, Routes } from "react-router-dom"
-import Main from '../Main/Main'
-import Video from '../../screens/YtVideo'
+import { Outlet } from "react-router-dom"
 
 const Layout = () => {
 	return (
 		<>
 		<Navbar />
-		<Routes>
-			<Route path='*' element={<Main />}/>
-			<Route path='video/:videoId' element={<Video />}/>
-		</Routes>
+		<Outlet />
 		</>
 	)
 }

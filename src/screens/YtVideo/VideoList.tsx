@@ -12,7 +12,7 @@ const VideoList = () => {
 		dispatch(getAllVideo())
 	},[])
   return (
-    <div className="w-[20%]">
+    <div className="w-[40%]">
       {data.map((item: any) => (
         <div key={item?.id?.videoId} className="mb-[30px]">
           <Link to={`/video/${item?.id?.videoId}`}>

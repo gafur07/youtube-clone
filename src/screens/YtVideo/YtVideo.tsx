@@ -6,13 +6,13 @@ import { useTypedSelector } from "../../components/hooks/useTypedSelector";
 import LoadingBar from "react-top-loading-bar";
 
 const YtVideo = () => {
-  // const { data, singleVideo } = useTypedSelector((store) => store.allVideo);
+  const { progress } = useTypedSelector((store) => store.allVideo);
   const params = useParams();
   const dispatch = useAppDispatch();
 
   return (
-    <div className="w-full">
-      <LoadingBar progress={100} />
+    <div className="w-full bg-slate-600">
+      <LoadingBar progress={progress} />
       <div className="">
         <iframe
           width="928"

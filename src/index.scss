@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 *{
-	box-sizing: content-box;
+	box-sizing: border-box;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 
   -webkit-appearance: none;
   width: 7px;
-  background-color: transparent;
+  background-color: #0f0f0f;
 
 }
 ::-webkit-scrollbar-thumb {

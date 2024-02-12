@@ -5,10 +5,15 @@ import { routes } from "./utils/routes"
 const App = () => {
 	return (
 		<>
-		<Layout />
-		{/* <Routes>
-			<Route path="/" element={<Layout />} />
-		</Routes> */}
+		<Routes>
+			<Route path="/" element={<Layout />}>
+				{
+					routes.map((item) => (
+						<Route key={item.path} path={item.path} element={<item.element />} />
+					))
+				}
+			</Route>
+		</Routes>
 		</>
 	)
 }

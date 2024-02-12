@@ -1,7 +1,9 @@
-import Main from "../components/Main/Main";
+import History from "../screens/History/History";
+import Home from "../screens/Home/Home";
 import Video from "../screens/YtVideo";
 
 export const routes = [
-	{path: "*", element: Main },
+	{path: "/", element: Home },
+	{path: "/history", element: History },
 	{path: "video/:videoId", element: Video },
 ]

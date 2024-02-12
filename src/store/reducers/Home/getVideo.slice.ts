@@ -4,9 +4,11 @@ import { getAllVideo } from "./getVideo.action"
 const initialState = {
 	data: [],
 	singleVideo: {},
-	loading: false,
   history: [],
-  timeViewVideos: []
+  timeViewVideos: [],
+	loading: false,
+	progress: 0,
+	openMenu: false
 }
 
 export const VideoSlice = createSlice({
@@ -22,22 +24,31 @@ export const VideoSlice = createSlice({
 		},
 		catchVideo: state => {
 			state.loading = false
+		},
+		openDrawer: state => {
+			state.openMenu = true
+		},
+		closeDrawer: state => {
+			state.openMenu = false
 		}
 	},
 
 	extraReducers: builder => {
 		builder
 			.addCase(getAllVideo.pending, state => {
-				state.loading = true
+				state.loading = true,
+				state.progress = 100
 			})
 			.addCase(getAllVideo.fulfilled, (state, action) => {
 				state.data = action.payload,
-				state.loading = false
+				state.loading = false,
+				state.progress = 0
 			})
 			.addCase(getAllVideo.rejected, state => {
-				state.loading = false
+				state.loading = false,
+				state.progress = 0
 			})
 	}
 })
-export const { fetchingVideo, fetchedVideo, catchVideo } = VideoSlice.actions
+export const { fetchingVideo, fetchedVideo, catchVideo, closeDrawer, openDrawer } = VideoSlice.actions
 export default VideoSlice.reducer
