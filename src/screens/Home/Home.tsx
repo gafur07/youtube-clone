@@ -5,6 +5,7 @@ import { useAppDispatch } from "../../components/hooks/useAppDispatch";
 import { getAllVideo } from "../../store/reducers/Home/getVideo.action";
 import moment from "moment";
 import LoadingBar from "react-top-loading-bar";
+import { fetchedVideo } from "../../store/reducers/Home/getVideo.slice";
 
 const Home = () => {
   const { data, progress } = useTypedSelector((store) => store.allVideo);
@@ -22,7 +23,7 @@ const Home = () => {
           <div className="grid grid-cols-4 gap-[16px]">
             {data?.map((item: any) => (
               <div key={item?.id?.videoId} className="mb-[30px]">
-                <Link to={`/video/${item?.id?.videoId}`}>
+                <Link to={`/video/${item?.id?.videoId}`} onClick={() => dispatch(fetchedVideo(item))}>
                   <img
                     className="rounded-md w-full h-[200px] object-cover"
                     src={item?.snippet?.thumbnails?.high?.url}

@@ -1,14 +1,10 @@
 import { Drawer, IconButton } from "@mui/material";
 import Menu from "@mui/icons-material/Menu";
-import Home from "@mui/icons-material/Home";
-import Whatshot from "@mui/icons-material/Whatshot";
 import PlayArrow from "@mui/icons-material/PlayArrow";
-import Cast from "@mui/icons-material/Cast";
 import Brightness from "@mui/icons-material/Brightness5";
 import Flag from "@mui/icons-material/Flag";
 import Help from "@mui/icons-material/Help";
 import Announcement from "@mui/icons-material/Announcement";
-import History from "@mui/icons-material/History";
 import { Link } from "react-router-dom";
 import logo from "../../images/yt-logo.svg";
 import musicIcon from "../../images/music.svg";
@@ -18,8 +14,9 @@ import filmIcon from "../../images/movie.svg";
 import newsIcon from "../../images/news.svg";
 import liveIcon from "../../images/live.svg";
 import spotlightIcon from "../../images/intelect.svg";
-import videoIcon from "../../images/moda.svg";
+import modaIcon from "../../images/moda.svg";
 import shorts from "../../images/shorts.svg";
+import trend from "../../images/trend.svg"
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { closeDrawer } from "../../store/reducers/Home/getVideo.slice";
@@ -40,12 +37,6 @@ const Sidebar = () => {
     padding: "16px 24px 0 24px",
   };
 
-  const aboutLabelStyle = {
-    marginRight: "8px",
-    fontSize: "0.8rem",
-    color: "hsla(0, 0%, 30%, 1)",
-    fontWeight: "500",
-  };
 
   const termStyle = {
     padding: "12px 24px 16px 24px",
@@ -111,10 +102,13 @@ const Sidebar = () => {
               BEST OF YOUTUBE
             </div>
             <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
+              <img src={trend} /> <span>Trend</span>
+            </div>	
+            <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
               <img src={musicIcon} /> <span>Music</span>
             </div>
             <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
-              <img src={soccerIcon} /> <span>Sports</span>
+              <img src={liveIcon} /> <span>Live</span>
             </div>
             <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
               <img src={gamingIcon} /> <span>Gaming</span>
@@ -123,19 +117,16 @@ const Sidebar = () => {
               <img src={filmIcon} /> <span>Movies</span>
             </div>
             <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
-              <img src={filmIcon} /> <span>TV Shows</span>
-            </div>
-            <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
               <img src={newsIcon} /> <span>News</span>
             </div>
             <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
-              <img src={liveIcon} /> <span>Live</span>
+              <img src={soccerIcon} /> <span>Sports</span>
             </div>
             <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
-              <img src={spotlightIcon} /> <span>Spotlight</span>
+              <img src={spotlightIcon} /> <span>Education</span>
             </div>
             <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
-              <img src={videoIcon} /> <span>360° Video</span>
+              <img src={modaIcon} /> <span>Moda</span>
             </div>
           </div>
           <div className="px-[32px] py-[16px] border-b">
@@ -181,53 +172,53 @@ const Sidebar = () => {
           <div>
             <div style={aboutStyle}>
               <div>
-                <span style={aboutLabelStyle} className="link">
+                <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">
                   About
                 </span>
-                <span style={aboutLabelStyle} className="link">
+                <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">
                   Press
                 </span>
-                <span style={aboutLabelStyle} className="link">
+                <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">
                   Copyright
                 </span>
               </div>
               <div>
-                <span style={aboutLabelStyle} className="link">
+                <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">
                   Contact us
                 </span>
-                <span style={aboutLabelStyle} className="link">
+                <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">
                   Creators
                 </span>
               </div>
               <div>
-                <span style={aboutLabelStyle} className="link">
+                <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">
                   Advertise
                 </span>
-                <span style={aboutLabelStyle} className="link">
+                <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">
                   Developers
                 </span>
               </div>
             </div>
             <div style={termStyle}>
               <div>
-                <span style={aboutLabelStyle} className="link">
+                <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">
                   Terms
                 </span>
-                <span style={aboutLabelStyle} className="link">
+                <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">
                   Privacy
                 </span>
-                <span style={aboutLabelStyle} className="link">
+                <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">
                   Policy & Safety
                 </span>
               </div>
               <div>
-                <span style={aboutLabelStyle} className="link">
+                <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">
                   Test new features
                 </span>
               </div>
             </div>
             <div style={youTubeLLCStyle}>
-              <span style={youTubeLLCLabelStyle}>© 2024 YouTube, LLC</span>
+              <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">© 2024 YouTube, LLC</span>
             </div>
           </div>
         </div>

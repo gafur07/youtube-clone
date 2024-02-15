@@ -20,6 +20,7 @@ export const VideoSlice = createSlice({
 		},
 		fetchedVideo: (state, action) => {
 			state.singleVideo = action.payload,
+			state.history.push(action.payload),
 			state.loading = false
 		},
 		catchVideo: state => {
