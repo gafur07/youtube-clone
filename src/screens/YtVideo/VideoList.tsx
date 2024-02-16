@@ -1,19 +1,30 @@
 import { Link } from "react-router-dom";
 import { useTypedSelector } from "../../components/hooks/useTypedSelector";
 import moment from "moment";
-import { useAppDispatch } from "../../components/hooks/useAppDispatch";
-import { useEffect } from "react";
-import { getAllVideo } from "../../store/reducers/Home/getVideo.action";
-import { fetchedVideo } from "../../store/reducers/Home/getVideo.slice";
 
 const VideoList = () => {
   const { data } = useTypedSelector((store) => store.allVideo);
-	const dispatch = useAppDispatch()
   return (
     <div className="w-[40%] h-[130vh] flex flex-col sticky p-[1rem] overflow-auto top-0">
       {data.map((item: any) => (
         <div key={item?.id?.videoId} className="mb-[30px] flex gap-2">
-          <Link to={`/video/${item?.id?.videoId}`} onClick={() => dispatch(fetchedVideo(item))}>
+          <Link
+            to={`/video/${item?.id?.videoId}`}
+            onClick={() => {
+              localStorage.setItem(
+                "title",
+                item?.snippet?.title
+              );
+              localStorage.setItem(
+                "channel",
+                item?.snippet?.channelTitle
+              );
+              localStorage.setItem(
+                "description",
+                item?.snippet?.description
+              );
+            }}
+          >
             <img
               className="rounded-md object-cover w-[150px]"
               src={item?.snippet?.thumbnails?.medium?.url}

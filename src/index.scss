@@ -11,7 +11,7 @@ body {
 	@apply bg-[#0f0f0f] max-w-[100%]
 }
 .container {
-	@apply w-[98%] mx-auto
+	@apply w-full mx-[24px]
 }
 .icon-btn:hover {
 	background: #222!important;

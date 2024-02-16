@@ -1,10 +1,6 @@
 import { Drawer, IconButton } from "@mui/material";
 import Menu from "@mui/icons-material/Menu";
 import PlayArrow from "@mui/icons-material/PlayArrow";
-import Brightness from "@mui/icons-material/Brightness5";
-import Flag from "@mui/icons-material/Flag";
-import Help from "@mui/icons-material/Help";
-import Announcement from "@mui/icons-material/Announcement";
 import { Link } from "react-router-dom";
 import logo from "../../images/yt-logo.svg";
 import musicIcon from "../../images/music.svg";
@@ -22,34 +18,16 @@ import { useAppDispatch } from "../hooks/useAppDispatch";
 import { closeDrawer } from "../../store/reducers/Home/getVideo.slice";
 import HomeIcon from "../../images/home.svg";
 import HistoryIcon from "../../images/history.svg";
+import helpIcon from "../../images/help.svg"
+import reportIcon from "../../images/report.svg"
+import settingIcon from "../../images/setting.svg"
+import feedbackIcon from "../../images/feedback.svg"
+import ytStudio from "../../images/yt-studio.svg"
+import ytKids from "../../images/yt-kids.svg"
 
 const Sidebar = () => {
   const { openMenu } = useTypedSelector((store) => store.allVideo);
   const dispatch = useAppDispatch();
-
-  const bestOfYoutubeContainerStyle = {
-    padding: "8px 0",
-    borderBottom: "rgba(220, 220, 220, 1) 1px solid",
-  };
-
-
-  const aboutStyle = {
-    padding: "16px 24px 0 24px",
-  };
-
-
-  const termStyle = {
-    padding: "12px 24px 16px 24px",
-  };
-
-  const youTubeLLCStyle = {
-    padding: "16px 24px",
-  };
-
-  const youTubeLLCLabelStyle = {
-    fontSize: "0.8rem",
-    color: "hsla(0, 0%, 60%, 1)",
-  };
 
   return (
     <Drawer
@@ -143,34 +121,34 @@ const Sidebar = () => {
               MORE FROM YOUTUBE
             </div>
             <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
-              <PlayArrow />
-              <span>YouTube Premium</span>
+              <img className="h-[24px]" src={ytStudio} />
+              <span>YouTube Studio</span>
             </div>
             <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
-              <img src={liveIcon} />
-              <span>Live</span>
+              <img className="h-[24px]" src={ytKids} />
+              <span>YouTube Kids</span>
             </div>
           </div>
-          <div style={bestOfYoutubeContainerStyle}>
+          <div className="py-[8px] border-b">
             <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
-              <Brightness />
+              <img src={settingIcon} />
               Settings
             </div>
             <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
-              <Flag />
+              <img src={reportIcon} />
               Report history
             </div>
             <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
-              <Help />
+              <img src={helpIcon} />
               Help
             </div>
             <div className="px-[24px] py-2 flex gap-[16px] cursor-pointer hover:bg-[#333] rounded-md">
-              <Announcement />
+              <img src={feedbackIcon} />
               Send feedback
             </div>
           </div>
           <div>
-            <div style={aboutStyle}>
+            <div className="px-[24px] pt-[16px]">
               <div>
                 <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">
                   About
@@ -199,7 +177,7 @@ const Sidebar = () => {
                 </span>
               </div>
             </div>
-            <div style={termStyle}>
+            <div className="px-[24px] pt-[12px] pb-[16px]">
               <div>
                 <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">
                   Terms
@@ -217,7 +195,7 @@ const Sidebar = () => {
                 </span>
               </div>
             </div>
-            <div style={youTubeLLCStyle}>
+            <div className="px-[24px] py-[16px]">
               <span className="text-[0.8rem] text-[#aaa] mr-[8px] font-[500]">© 2024 YouTube, LLC</span>
             </div>
           </div>

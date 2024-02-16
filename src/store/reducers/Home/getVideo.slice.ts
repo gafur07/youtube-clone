@@ -3,7 +3,6 @@ import { getAllVideo } from "./getVideo.action"
 
 const initialState = {
 	data: [],
-	singleVideo: {},
   history: [],
   timeViewVideos: [],
 	loading: false,
@@ -15,17 +14,6 @@ export const VideoSlice = createSlice({
 	name: "getVideo",
 	initialState,
 	reducers:{
-		fetchingVideo: state => {
-			state.loading = true
-		},
-		fetchedVideo: (state, action) => {
-			state.singleVideo = action.payload,
-			state.history.push(action.payload),
-			state.loading = false
-		},
-		catchVideo: state => {
-			state.loading = false
-		},
 		openDrawer: state => {
 			state.openMenu = true
 		},
@@ -51,5 +39,5 @@ export const VideoSlice = createSlice({
 			})
 	}
 })
-export const { fetchingVideo, fetchedVideo, catchVideo, closeDrawer, openDrawer } = VideoSlice.actions
+export const { closeDrawer, openDrawer } = VideoSlice.actions
 export default VideoSlice.reducer

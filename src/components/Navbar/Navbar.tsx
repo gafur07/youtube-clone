@@ -4,29 +4,19 @@ import bell from "../../images/bell.svg";
 import create from "../../images/create.svg";
 import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { FC, useState } from "react";
+import { useState } from "react";
 import { getAllVideo } from "../../store/reducers/Home/getVideo.action";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { Link } from "react-router-dom";
-import {
-  closeDrawer,
-  openDrawer,
-} from "../../store/reducers/Home/getVideo.slice";
-import { useTypedSelector } from "../hooks/useTypedSelector";
-import { SidebarMenuData, sidebarMenu } from "../Sidebar/sidebar.menu";
+import { openDrawer } from "../../store/reducers/Home/getVideo.slice";
 import Sidebar from "../Sidebar/Sidebar";
-
-interface ItemProps {
-  item: SidebarMenuData;
-}
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
-  const { openMenu } = useTypedSelector((store) => store.allVideo);
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
   function searchVideo(e: any) {
     e.preventDefault();
-    dispatch(getAllVideo(search));
+    dispatch(getAllVideo(search))
   }
   return (
     <header className="py-[15px] flex items-center justify-center h-[57px] w-full fixed top-0 z-[999] bg-[#0f0f0f]">
