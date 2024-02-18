@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useTypedSelector } from "../../components/hooks/useTypedSelector";
 import LoadingBar from "react-top-loading-bar";
 
@@ -19,9 +19,9 @@ const YtVideo = () => {
           allowFullScreen
         ></iframe>{" "}
         <div>
-          <p className="text-[#aaa] text-[1.1rem]">
+          <Link to={`/channel/${localStorage.getItem("channelId")}`} className="text-[#aaa] text-[1.1rem]">
             {localStorage.getItem("channel")}
-          </p>
+          </Link>
           <h1 className="text-[1.4rem] font-[400] pb-[3px] text-white">
             {localStorage.getItem("title")}
           </h1>

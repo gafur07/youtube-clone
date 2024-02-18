@@ -19,8 +19,7 @@ const Navbar = () => {
     dispatch(getAllVideo(search))
   }
   return (
-    <header className="py-[15px] flex items-center justify-center h-[57px] w-full fixed top-0 z-[999] bg-[#0f0f0f]">
-      <div className="container">
+    <header className="px-[16px] box-border flex items-center justify-center h-[57px] w-full fixed top-0 z-[999] bg-[#0f0f0f]">
         <nav className="w-full flex justify-between items-center gap-[50px]">
           <div className="flex gap-4 items-center">
             <IconButton
@@ -42,7 +41,7 @@ const Navbar = () => {
                 onChange={(e) => {
                   setSearch(e.target.value);
                 }}
-                className="w-full border-[0.1px] border-[#D3D3D3] text-white 
+                className="w-full max-w-[575px] border-[0.1px] border-[#D3D3D3] text-white 
 									bg-transparent py-[5px] pl-[15px] rounded-l-[20px] outline-none"
                 type="search"
                 placeholder="Введите вопрос"
@@ -66,7 +65,6 @@ const Navbar = () => {
             />
           </div>
         </nav>
-      </div>
       <Sidebar />
     </header>
   );

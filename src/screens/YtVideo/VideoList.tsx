@@ -15,6 +15,7 @@ const VideoList = () => {
                 "title",
                 item?.snippet?.title
               );
+							localStorage.setItem("channelId", item?.snippet?.channelId);
               localStorage.setItem(
                 "channel",
                 item?.snippet?.channelTitle
@@ -35,9 +36,9 @@ const VideoList = () => {
             <h1 className="w-[200px] text-wrap text-white font-semibold text-[0.900rem]">{`${
               item?.snippet?.title && item?.snippet?.title.slice(0, 50)
             }...`}</h1>
-            <p className="text-[#aaa] font-semibold text-[0.768rem]">
+            <Link to={`/channel/${item?.snippet?.channelId}`} className="text-[#aaa] font-semibold text-[0.768rem]">
               {item?.snippet?.channelTitle}
-            </p>
+            </Link>
             <p className="text-[#aaa] text-[0.768rem]">
               {moment(item?.snippet?.publishTime).fromNow()}
             </p>

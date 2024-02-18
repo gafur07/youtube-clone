@@ -10,22 +10,23 @@ const Home = () => {
   const { data, progress } = useTypedSelector((store) => store.allVideo);
   const dispatch = useAppDispatch();
   console.log(data);
-  useEffect(() => {
-    // dispatch(getAllVideo())
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getAllVideo())
+  // }, []);
 
   return (
     <>
-      <div className="w-full min-h-[85vh] pb-[30px] mt-[80px]">
+      <div className="w-full min-h-[85vh] pb-[30px] mt-[80px] px-[16px]">
         <LoadingBar color="red" progress={progress} />
-        <div className="container">
-          <div className="grid grid-cols-4 gap-[16px]">
+          <div className="grid grid-cols-4 gap-[16px] mx-auto">
             {data?.map((item: any) => (
               <div key={item?.id?.videoId} className="mb-[30px]">
                 <Link
+									key={item?.id?.videoId}
                   to={`/video/${item?.id?.videoId}`}
                   onClick={() => {
                     localStorage.setItem("title", item?.snippet?.title);
+                    localStorage.setItem("channelId", item?.snippet?.channelId);
                     localStorage.setItem(
                       "channel",
                       item?.snippet?.channelTitle
@@ -37,18 +38,17 @@ const Home = () => {
                   }}
                 >
                   <img
-                    className="rounded-md w-full h-[200px] object-cover"
-                    src={item?.snippet?.thumbnails?.high?.url}
-                    alt=""
+                    className="rounded-md object-cover"
+                    src={item?.snippet?.thumbnails?.medium?.url}
                   />
                 </Link>
                 <div>
                   <h1 className="w-[310px] text-wrap text-white font-semibold text-[17px]">{`${
                     item?.snippet?.title && item?.snippet?.title.slice(0, 50)
                   }...`}</h1>
-                  <p className="text-[#aaa] font-semibold">
+                  <Link to={`/channel/${item?.snippet?.channelId}`} className="text-[#aaa] font-semibold">
                     {item?.snippet?.channelTitle}
-                  </p>
+                  </Link>
                   <p className="text-[#aaa]">
                     {moment(item?.snippet?.publishTime).fromNow()}
                   </p>
@@ -57,7 +57,6 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </div>
     </>
   );
 };
