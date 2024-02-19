@@ -6,8 +6,9 @@ const key = "AIzaSyCsUBl7MGq9eCgNgiZFY6Efxh4gpo2MbpE"
 export const axiosAPI = axios.create({
 	baseURL,
 	params: {
-		part: "snippet",
+		part: "snippet, contentDetails, id, liveStreamingDetails, player, recordingDetails, statistics, topicDetails",
 		maxResults: 50,
+		chart: "mostPopular",
 		key,
 	}
 })

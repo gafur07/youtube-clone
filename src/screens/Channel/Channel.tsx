@@ -12,9 +12,9 @@ const Channel = () => {
   const params = useParams();
   console.log(channel);
 
-  // useEffect(() => {
-  //   dispatch(getChannel(params?.channelId));
-  // }, []);
+  useEffect(() => {
+    dispatch(getChannel(params?.channelId));
+  }, []);
 
   return (
     <>
@@ -33,10 +33,10 @@ const Channel = () => {
 							<div className="flex gap-4">
 								<img className="rounded-full w-[160px] h-[160px]" src={item?.snippet?.thumbnails?.medium?.url} alt="" />
 								<div>
-									<span className="flex items-center gap-2">
-										<h1 className="text-white text-[36px] font-bold">{item?.snippet?.title}</h1>
-										<img className="w-[13px] h-[13px] cursor-pointer" src={golochka} alt="" />
-									</span>
+										<h1 className="text-white text-[36px] font-bold">
+											{item?.snippet?.title}
+											<img className="w-[13px] h-[13px] cursor-pointer inline-flex ml-[8px]" src={golochka} alt="" />
+											</h1>
 									<span className="flex gap-[5px] text-[#aaa]">
 										<p>{item?.snippet?.customUrl}</p>
 										<p>‧</p>
