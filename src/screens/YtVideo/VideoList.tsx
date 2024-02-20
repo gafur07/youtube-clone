@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useTypedSelector } from "../../components/hooks/useTypedSelector";
 import moment from "moment";
+import { useTypedSelector } from "@/hooks/useTypedSelector";
 
 const VideoList = () => {
   const { data } = useTypedSelector((store) => store.allVideo);

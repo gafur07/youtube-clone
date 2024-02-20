@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { useTypedSelector } from "../../components/hooks/useTypedSelector";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useEffect } from "react";
-import { useAppDispatch } from "../../components/hooks/useAppDispatch";
+import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { getAllVideo } from "../../store/reducers/Home/getVideo.action";
 import moment from "moment";
 import LoadingBar from "react-top-loading-bar";
@@ -33,6 +33,7 @@ const Home = () => {
                     localStorage.setItem("views", item?.statistics?.viewCount);
                     localStorage.setItem("tags", JSON.stringify(item?.snippet?.tags));
                     localStorage.setItem("like", item?.statistics?.likeCount);
+                    localStorage.setItem("comment", item?.statistics?.commentCount);
                     localStorage.setItem(
                       "channel",
                       item?.snippet?.channelTitle

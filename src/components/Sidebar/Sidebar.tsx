@@ -13,8 +13,8 @@ import spotlightIcon from "../../images/intelect.svg";
 import modaIcon from "../../images/moda.svg";
 import shorts from "../../images/shorts.svg";
 import trend from "../../images/trend.svg"
-import { useTypedSelector } from "../hooks/useTypedSelector";
-import { useAppDispatch } from "../hooks/useAppDispatch";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
+import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { closeDrawer } from "../../store/reducers/Home/getVideo.slice";
 import HomeIcon from "../../images/home.svg";
 import HistoryIcon from "../../images/history.svg";

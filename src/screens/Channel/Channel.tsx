@@ -1,27 +1,27 @@
 import LoadingBar from "react-top-loading-bar";
-import { useTypedSelector } from "../../components/hooks/useTypedSelector";
 import { useParams } from "react-router-dom";
-import { useAppDispatch } from "../../components/hooks/useAppDispatch";
 import { useEffect } from "react";
-import { getChannel } from "../../store/reducers/channel/channel.action";
 import golochka from "../../images/galochka.svg"
+import { useTypedSelector } from "@/hooks/useTypedSelector";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { getChannel } from "@/store/reducers/channel/channel.action";
 
 const Channel = () => {
   const { progress, channel } = useTypedSelector((store) => store.allChannel);
   const dispatch = useAppDispatch();
   const params = useParams();
   console.log(channel);
-
+	const id = params.channelId
   useEffect(() => {
-    dispatch(getChannel(params?.channelId));
-  }, []);
+    dispatch(getChannel(id));
+  }, [params]);
 
   return (
     <>
       <div className="mt-[75px] px-[16px]">
         <LoadingBar progress={progress} />
         <div className="w-[80%] mx-auto">
-          {channel.map((item: any) => (
+          {channel?.map((item: any) => (
             <div>
               <div className="banner w-full overflow-hidden rounded-md mb-[16px]">
                 <img

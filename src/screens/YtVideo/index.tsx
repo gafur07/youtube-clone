@@ -1,5 +1,6 @@
 import YtVideo from "./YtVideo";
 import VideoList from "./VideoList";
+import "./Video.scss"
 
 const Video = () => {
   return (

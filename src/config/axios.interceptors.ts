@@ -21,3 +21,14 @@ export const axiosChannel = axios.create({
 		maxResult: 50,
 	}
 })
+
+
+export const axiosComment = axios.create({
+	baseURL,
+	params: {
+		part: "snippet",
+		key,
+		maxResults: 100,
+		textFormat: "plainText"
+	}
+})

@@ -1,7 +1,9 @@
 import videoReducer from "./Home/getVideo.slice";
 import channelReducer from "./channel/channel.slice";
+import commentReducer from "./comment/comment.slice";
 
 export const rootReducer = {
 	allVideo: videoReducer,
-	allChannel: channelReducer
+	allChannel: channelReducer,
+	comment: commentReducer
 }

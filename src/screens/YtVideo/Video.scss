@@ -1,0 +1,39 @@
+.info_details {
+	@apply h-[36px] cursor-pointer gap-2 bg-[rgba(255,255,255,0.1)] inline-flex py-[7px] duration-200
+	hover:bg-[rgba(255,255,255,0.2)];
+
+	&_span {
+		@apply h-full flex gap-2 items-center my-auto px-[16px]
+	}
+}
+
+.info_like {
+	@apply pr-[0.5px] rounded-l-[18px];
+}
+.info_dislike {
+	@apply rounded-r-[18px]
+}
+
+.info_share {
+	@apply rounded-[18px]
+}
+.info_download {
+	@apply rounded-[18px]
+}
+
+.info_dot {
+	@apply rounded-[18px] px-[6px]
+}
+
+.info_text {
+	@apply text-white text-[14px] font-medium
+}
+
+
+.description {
+	@apply bg-[rgba(255,255,255,0.1)] rounded-md p-[12px]
+}
+
+.description_text {
+	@apply text-white text-[14px] font-medium
+}
