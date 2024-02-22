@@ -9,5 +9,5 @@ export const routes = [
 	{path: "/history", element: History },
 	{path: "video/:videoId", element: Video },
 	{path: "channel/:channelId", element: Channel},
-	{path: "result/:search", element: Result}
+	{path: "result/:q", element: Result}
 ]

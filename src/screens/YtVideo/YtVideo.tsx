@@ -3,7 +3,7 @@ import LoadingBar from "react-top-loading-bar";
 import { useTypedSelector } from "@/hooks/useTypedSelector";
 import { useAppDispatch } from "@/hooks/useAppDispatch";
 import "./Video.scss"
-import VideoInfo from "./videoInfo";
+import VideoInfo from "./VideoInfo";
 import Comment from "./Comment";
 import { FC } from "react";
 
@@ -30,7 +30,7 @@ const YtVideo:FC = () => {
         ></iframe>{" "}
         {/*INFO started */}
         <VideoInfo />
-				<Comment key={id} id={`${id}`} />
+				{/* <Comment key={id} id={`${id}`} /> */}
       </div>
     </div>
   );

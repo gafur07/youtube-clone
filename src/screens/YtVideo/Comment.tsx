@@ -13,9 +13,9 @@ const Comment: FC<ICommentID> = ({ id }) => {
 	const dispatch = useAppDispatch()
 	const params = useParams()
 
-	useEffect(() => {
-		dispatch(getComment(id))
-	},[params])
+	// useEffect(() => {
+	// 	dispatch(getComment(id))
+	// },[params])
 	return (
 		<div>Comment</div>
 	)

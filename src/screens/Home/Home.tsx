@@ -12,10 +12,9 @@ const Home = () => {
   const { data, progress } = useTypedSelector((store) => store.allVideo);
   const dispatch = useAppDispatch();
   console.log(data);
-  // useEffect(() => {
-  //   dispatch(getAllVideo())
-  // }, []);
-
+  useEffect(() => {
+    dispatch(getAllVideo())
+  }, []);
   return (
     <>
       <div className="w-full min-h-[85vh] pb-[30px] mt-[80px] px-[16px]">
@@ -34,14 +33,8 @@ const Home = () => {
                     localStorage.setItem("tags", JSON.stringify(item?.snippet?.tags));
                     localStorage.setItem("like", item?.statistics?.likeCount);
                     localStorage.setItem("comment", item?.statistics?.commentCount);
-                    localStorage.setItem(
-                      "channel",
-                      item?.snippet?.channelTitle
-                    );
-                    localStorage.setItem(
-                      "description",
-                      item?.snippet?.description
-                    );
+                    localStorage.setItem("channel", item?.snippet?.channelTitle);
+                    localStorage.setItem("description", item?.snippet?.description);
                   }}
                 >
                   <img

@@ -5,18 +5,21 @@ import create from "../../images/create.svg";
 import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
-import { getAllVideo } from "../../store/reducers/Home/getVideo.action";
-import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { openDrawer } from "../../store/reducers/Home/getVideo.slice";
 import Sidebar from "../Sidebar/Sidebar";
+import { useAppDispatch } from '@/hooks/useAppDispatch'
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+
   function searchVideo(e: any) {
     e.preventDefault();
-    dispatch(getAllVideo())
+    if (search !== '') {
+      navigate(`/result/${search}`)
+    }
   }
   return (
     <header className="px-[16px] box-border flex items-center justify-center h-[57px] w-full fixed top-0 z-[999] bg-[#0f0f0f]">

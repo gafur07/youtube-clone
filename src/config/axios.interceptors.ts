@@ -13,6 +13,15 @@ export const axiosAPI = axios.create({
 	}
 })
 
+export const axiosSearch = axios.create({
+	baseURL,
+	params: {
+		part: "snippet, id",
+		maxResults: 50,
+		key
+	}
+})
+
 export const axiosChannel = axios.create({
 	baseURL,
 	params: {

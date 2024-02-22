@@ -13,6 +13,11 @@ body {
 .container {
 	@apply w-full mx-[24px]
 }
+
+.golochka {
+	@apply w-[13px] h-[13px] cursor-pointer inline-flex ml-[4px]
+}
+
 .icon-btn:hover {
 	background: #222!important;
 	transition: all 0.3s ease-in-out;
