@@ -14,13 +14,15 @@ const Result = () => {
   const { channel } = useTypedSelector((store) => store.allChannel);
   const dispatch = useAppDispatch();
   const params = useParams();
-  const id = result.map((item: any) => {
-    return item?.snippet?.channelId;
+  const id = result?.map((item: any) => {
+    return item?.snippet?.channelId
   });
+  console.log(id)
+  
 
-  useEffect(() => {
-		dispatch(getResult(params.q))
-		dispatch(getChannel(id));
+   useEffect(() => {
+		// dispatch(getResult({q: params.q}))
+		// dispatch(getChannel({channelId: id}));
 	}, [params]);
 
   console.log(channel);

@@ -1,7 +1,8 @@
 import axios from "axios"
 
 export const baseURL = "https://www.googleapis.com/youtube/v3"
-const key = "AIzaSyCsUBl7MGq9eCgNgiZFY6Efxh4gpo2MbpE"
+// const key = "AIzaSyCsUBl7MGq9eCgNgiZFY6Efxh4gpo2MbpE"
+const key = "AIzaSyDa2R-fJe6Y2iqEkq4_J9C5ZO0nSaPYXNM"
 
 export const axiosAPI = axios.create({
 	baseURL,

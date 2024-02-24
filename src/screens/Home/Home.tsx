@@ -13,7 +13,7 @@ const Home = () => {
   const dispatch = useAppDispatch();
   console.log(data);
   useEffect(() => {
-    dispatch(getAllVideo())
+    // dispatch(getAllVideo())
   }, []);
   return (
     <>
