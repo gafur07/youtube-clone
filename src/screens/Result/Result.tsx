@@ -21,8 +21,8 @@ const Result = () => {
   
 
    useEffect(() => {
-		// dispatch(getResult({q: params.q}))
-		// dispatch(getChannel({channelId: id}));
+		dispatch(getResult({q: params.q}))
+		dispatch(getChannel({channelId: id}));
 	}, [params]);
 
   console.log(channel);
