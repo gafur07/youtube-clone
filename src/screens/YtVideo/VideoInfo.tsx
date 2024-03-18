@@ -18,8 +18,15 @@ const VideoInfo = () => {
   console.log(channel);
   const id = localStorage.getItem("channelId");
   useEffect(() => {
-    dispatch(getChannel(id));
+    dispatch(getChannel({channelId: id}));
   }, []);
+
+  function jsonEscape(str: any) {
+    return str.replace(/\n/g, `<br/>`);
+  }
+  const text = channel?.map((i: any) => {
+    return jsonEscape(localStorage.getItem("description")).split("<br/>");
+  });
 
   return (
     <>
@@ -119,9 +126,13 @@ const VideoInfo = () => {
               {moment(localStorage.getItem("date")).format("MMM D, YYYY")}
             </p>
           </div>
-          <p className="text-[1rem] w-full space-y-[1.3rem] text-white">
-            {localStorage.getItem("description")}
-          </p>
+            {
+              text[0]?.map((item: any) => (
+                <p className="text-[1rem] w-full space-y-[1.3rem] text-white">
+                  {item}
+                </p>
+              ))
+            }
         </div>
       </div>
     </>

@@ -13,11 +13,11 @@ const Home = () => {
   const dispatch = useAppDispatch();
   console.log(data);
   useEffect(() => {
-    // dispatch(getAllVideo())
+    dispatch(getAllVideo())
   }, []);
   return (
     <>
-      <div className="w-full min-h-[85vh] pb-[30px] mt-[80px] px-[16px]">
+      <div className="w-full min-h-[85vh] pb-[30px] mt-[80px] px-[16px] overflow-x-hidden">
         <LoadingBar color="red" progress={progress} />
           <div className="grid grid-cols-4 gap-[16px] mx-auto">
             {data?.map((item: any) => (

@@ -76,7 +76,7 @@ const Channel = () => {
 
           <div className="mt-6 border-t border-[#aaa]">
             <div className="flex items-start gap-6 justify-between">
-              <div className="text-white">
+              <div className="text-white w-[70%]">
                 <h2 className="text-[20px] font-[700] my-6 text-white">
                   Description
                 </h2>

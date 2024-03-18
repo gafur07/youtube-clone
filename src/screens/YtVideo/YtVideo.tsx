@@ -5,7 +5,9 @@ import { useAppDispatch } from "@/hooks/useAppDispatch";
 import "./Video.scss"
 import VideoInfo from "./VideoInfo";
 import Comment from "./Comment";
-import { FC } from "react";
+import { FC, useEffect } from "react";
+import axios from "axios";
+import { baseURL } from "@/config/axios.interceptors";
 
 
 const YtVideo:FC = () => {

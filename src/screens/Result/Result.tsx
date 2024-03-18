@@ -42,6 +42,17 @@ const Result = () => {
                     <Link
                       className="w-[360px] block"
                       to={`/video/${item?.id?.videoId}`}
+                      onClick={() => {
+                        localStorage.setItem("title", item?.snippet?.title);
+                        localStorage.setItem("channelId", item?.snippet?.channelId);
+                        localStorage.setItem("date", item?.snippet?.publishedAt);
+                        localStorage.setItem("views", item?.statistics?.viewCount);
+                        localStorage.setItem("tags", JSON.stringify(item?.snippet?.tags));
+                        localStorage.setItem("like", item?.statistics?.likeCount);
+                        localStorage.setItem("comment", item?.statistics?.commentCount);
+                        localStorage.setItem("channel", item?.snippet?.channelTitle);
+                        localStorage.setItem("description", item?.snippet?.description);
+                      }}
                     >
                       <img
                         className="rounded-md w-full h-full flex-[1] flex-basic-[1e-9px]"
